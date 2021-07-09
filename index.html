@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Animation</title>
+    <style>
+        @keyframes batmove {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform-origin: top right;
+                transform: rotate(-70deg);
+            }
+        }
+
+        @keyframes ballcome {
+            0% {
+                top: 0;
+            }
+
+            5% {
+                top: 0;
+            }
+
+            50% {
+                top: 330px;
+                left: 50%;
+                transform: rotateZ(100deg);
+            }
+
+            100% {
+                top: 250px;
+                left: 23%;
+                transform: rotateZ(100deg);
+            }
+        }
+
+        @keyframes ballgo {
+            0% {
+                top: 250px;
+                left: 30%;
+                transform: rotateZ(100deg);
+            }
+
+            100% {
+                top: 0px;
+                left: 105%;
+                transform: rotateZ(100deg);
+                display: none;
+            }
+        }
+
+        .field {
+            border-bottom: 10px solid green;
+            position: relative;
+        }
+
+        .bat {
+            transition: 0.3s ease-in;
+            width: 350px;
+            animation: batmove .5s ease-in 1.5s;
+
+        }
+
+        .ball {
+            position: absolute;
+            left: 105%;
+            top: 0;
+            width: 50px;
+            transition: transform 0.3s ease-out;
+            animation: ballcome 1.5s ease-in .45s, ballgo 1.5s ease-out 1.95s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="field">
+        <img src="images/bat.png" alt="" class="bat">
+        <img src="images/ball.png" alt="" class="ball">
+    </div>
+</body>
+
+</html>
